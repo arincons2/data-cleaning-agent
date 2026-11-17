@@ -204,9 +204,13 @@ def make_lightweight_data_cleaning_agent(
             You are a Data Cleaning Agent. Create a {function_name}() function to clean the data.
 
             Basic Cleaning Steps to implement:
-            1. Remove columns with more than 40% missing values
-            2. Impute missing values (mean for numeric, mode for categorical)
-            3. Remove duplicate rows
+            1. Determine and calculate the number of missing values (NaN/null values) in every column of the original uploaded dataset BEFORE performing any cleaning operations.
+            2. Remove columns with more than 40% missing values
+            3. Impute missing values (mean for numeric, mode for categorical)
+            4. Remove duplicate rows
+            5. Convert the age column data type to integer
+            6. Convert the experience column data type to integer
+            7. If the number of rows with non-missing employee_id values is less than 70%, remove the employee_id column
 
             User Instructions:
             {user_instructions}
